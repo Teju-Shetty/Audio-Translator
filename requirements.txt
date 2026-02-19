@@ -1,7 +1,8 @@
-streamlit==1.32.2
-audio-recorder-streamlit==0.0.8
-openai-whisper==20231117
+streamlit
+audio-recorder-streamlit
+openai-whisper
+deep-translator
+gTTS
 torch
-deep-translator==1.11.4
-gTTS==2.5.1
-ffmpeg-python==0.2.0
+numpy
+ffmpeg-python

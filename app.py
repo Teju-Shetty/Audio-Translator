@@ -62,7 +62,7 @@ TEAM_LANG = lang_map[teammate_lang_name]
 @st.cache_resource
 def load_model():
     # medium gives much better Indian language accuracy
-    return whisper.load_model("medium")
+    return whisper.load_model("small")
 
 model = load_model()
 

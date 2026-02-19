@@ -1,0 +1,8 @@
+streamlit
+audio-recorder-streamlit
+openai-whisper
+deep-translator
+gTTS
+torch
+numpy
+ffmpeg-python

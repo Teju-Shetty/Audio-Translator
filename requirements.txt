@@ -1,8 +1,7 @@
-streamlit
-audio-recorder-streamlit
-openai-whisper
-deep-translator
-gTTS
-numpy==1.26.4
-torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
-ffmpeg-python
+streamlit==1.32.2
+audio-recorder-streamlit==0.0.8
+openai-whisper==20231117
+torch==2.1.2
+deep-translator==1.11.4
+gTTS==2.5.1
+ffmpeg-python==0.2.0

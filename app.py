@@ -62,7 +62,7 @@ TEAM_LANG = lang_map[teammate_lang_name]
 @st.cache_resource
 def load_model():
     # medium gives much better Indian language accuracy
-    return whisper.load_model("small")
+    return whisper.load_model("medium")
 
 model = load_model()
 
@@ -131,7 +131,11 @@ def add_message(sender, original_english_text, audio_bytes=None):
     receiver_lang = TEAM_LANG if sender == "p1" else YOU_LANG
 
     translated_text = translate_text(original_english_text, receiver_lang)
-    tts_audio = generate_tts(translated_text, receiver_lang)
+
+    tts_audio = None
+    if audio_bytes:  # Only generate TTS if original message was voice
+        tts_audio = generate_tts(translated_text, receiver_lang)
+
 
     audio64 = base64.b64encode(audio_bytes).decode() if audio_bytes else None
 

@@ -85,12 +85,14 @@ if "text_counter" not in st.session_state:
 # ---------------- UTILITIES ----------------
 
 def translate_text(text, target_lang):
-    if target_lang == "en":
-        return text
     try:
-        return GoogleTranslator(source="en", target=target_lang).translate(text)
+        return GoogleTranslator(
+            source="auto",   # 🔥 Let Google detect input language
+            target=target_lang
+        ).translate(text)
     except:
         return text
+
 
 
 def speech_to_english(audio_bytes):
@@ -105,7 +107,7 @@ def speech_to_english(audio_bytes):
 
     result = model.transcribe(
         path,
-        task="translate",  # 🔥 Always convert speech → English
+        task="transcribe",  # 🔥 Always convert speech → English
         fp16=False
     )
 

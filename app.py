@@ -159,6 +159,10 @@ def render_chat(viewer):
         show_text = msg["english"] if is_sender else msg["translated"]
 
         audio_html = ""
+        # Show original audio to sender
+        if is_sender and msg.get("audio"):
+            audio_html += f'<audio controls src="data:audio/wav;base64,{msg["audio"]}"></audio>'
+            
         if not is_sender and msg.get("tts"):
             audio_html = f'<audio controls src="data:audio/mp3;base64,{msg["tts"]}"></audio>'
 

@@ -3,6 +3,6 @@ audio-recorder-streamlit
 openai-whisper
 deep-translator
 gTTS
-numpy
+numpy==1.26.4
 torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
 ffmpeg-python
